@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+
+    <!--jszip-->
+    <script src="./js/jszip.min.js"></script>
+
+    <!--chartjs-->
+    <script src="./js/Chart.min.js"></script>
+    <!--this is for custom labels-->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-piechart-outlabels"></script>
+
+
+    <!--icon pack-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
+    <script defer src="./js/index.js"></script>
+    <script src="./js/analyzer.js"></script>
+    <script src="./js/renderSlides.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <header class="innerHeader">
+            <div class="logo">
+                <img src="./logo.png" ref="whatstats"><h1>What<span>Stats</span></h1>
+            </div>
+            <ul class="navigation">
+                <a>
+                    <li>Sobre</li>
+                </a>
+                <a>
+                    <li><i class="zmdi zmdi-github"></i></li>
+                </a>
+                <a>
+                    <li><i class="zmdi zmdi-twitter"></i></li>
+                </a>
+            </ul>
+        </header>
+    </div>
+    <div class="uploaderContainer">
+        <div class="uploaderBox">
+            <div class="clips"><i class="zmdi zmdi-attachment-alt"></i></div>
+            <div class="filename">Nenhum arquivo selecionado</div>
+            <div class="send"><i class="zmdi zmdi-mail-send"></i></div>
+        </div>
+
+        <form class="uploaderForm">
+            <input type="file" name="conversa" accept=".zip,.txt" class="uploaderInput">
+            <input type="submit" class="uploaderSubmit">
+        </form>
+    </div>
+    <div class="slidesContainer"></div>
+</body>
