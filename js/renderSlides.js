@@ -82,7 +82,6 @@ function renderSlides(slides) {
                 //Only show top 8 on chart
                 chartConfig.data.datasets[0].data = chartConfig.data.datasets[0].data.slice(0,7)
                 chartConfig.data.labels = chartConfig.data.labels.slice(0,7)
-
             }
 
             if (chartConfig.type === "outlabeledPie") {

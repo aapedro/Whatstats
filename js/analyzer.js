@@ -147,7 +147,9 @@ function analyzeChat(chat) {
         }
 
         if (formatting === "android") {
-
+            makeMessageChartData()
+            makeCpmChartData()
+            makeWordSearchData()
         }
     }
 
@@ -169,6 +171,7 @@ function analyzeChat(chat) {
                     .split(" ")
                     .map((name, index) => index > 0 ? name[0] + "." : name)
                     .join(" ")
+
                 if (!authors.includes(messageAuthor)) authors.push(messageAuthor)
                 messages.push({
                     content: messageContent,
@@ -181,8 +184,28 @@ function analyzeChat(chat) {
 
     } else if (chat[0] === "0" || chat[0] === "1" || chat[0] === "2" || chat[0] === "3") { //Android formatting
 
+        chat.match(/(([012][0-9])|(3[01]))\/([0][1-9]|1[012])\/\d\d\d\d (20|21|22|23|[0-1]\d):[0-5]\d - .*/gm)
+            .slice(1)
+            .filter(line => (line.startsWith("0") || line.startsWith("1") || line.startsWith("2") || line.startsWith("3")) && line.includes(": "))
+            .forEach(currentMessage => {
 
+                const messageContent = currentMessage.slice(19).split(": ").pop()
+                const messageAuthor = currentMessage.slice(19)
+                    .split(": ")
+                    .shift()
+                    .split(" ")
+                    .map((name, index) => index > 0 ? name[0] + "." : name)
+                    .join(" ")
 
+                if (messageAuthor.length > 10) console.log(messageContent, messageAuthor)
+                if (!authors.includes(messageAuthor)) authors.push(messageAuthor)
+                messages.push({
+                    content: messageContent,
+                    author: messageAuthor
+                })
+            })
+
+        makeChartData(messages, authors, "android")
 
     } else { //Unsupported file
 
