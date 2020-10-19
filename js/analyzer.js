@@ -197,7 +197,6 @@ function analyzeChat(chat) {
                     .map((name, index) => index > 0 ? name[0] + "." : name)
                     .join(" ")
 
-                if (messageAuthor.length > 10) console.log(messageContent, messageAuthor)
                 if (!authors.includes(messageAuthor)) authors.push(messageAuthor)
                 messages.push({
                     content: messageContent,
