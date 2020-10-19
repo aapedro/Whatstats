@@ -184,6 +184,52 @@ body {
     width: 600px;
 }
 
+.searchSubmit {
+    display: none;
+}
+
+.searchBox {
+    background-color: white;
+    width: 90%;
+    height: 70px;
+    border-radius: 100px;
+    margin-left: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.searchTerm {
+    color: #a8a8a8;
+    margin-left: 17px;
+    font-size: 25px;
+    width: 50%;
+    border: none;
+    font-family: "Roboto", sans-serif;
+}
+
+.searchTerm:focus {
+    outline: none;
+}
+
+.searchSend {  
+    font-size: 35px;
+    color: #fbfbfb;
+    background-color: #008a7c;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 100px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchSend:hover {
+    background: #1f998c;
+    box-shadow: 0 0 4px #1d8e81;
+}
 /* .slidecontainer 
         .slide
             .canvascontainer

@@ -27,16 +27,36 @@ function renderSlides(slides) {
 
             //Create the search form
             const newSearchForm = document.createElement("form")
-            newSearchForm.className = "wordSearch listTitle"
+            newSearchForm.className = "wordSearch"
             newList.appendChild(newSearchForm)
 
             newSearchForm.innerHTML = `
-            <input type="text" class="searchInput">
-            <input type="submit" class="searchSubmit">
+            <div class="searchBox">
+                <input type="text" placeholder="Pesquisar..." class="searchTerm"></input>
+                <input type="submit" class="searchSubmit">
+                <div class="searchSend"><i class="zmdi zmdi-search"></i></div>
+            </div>
             `
+
+            newSearchForm.children[0].children[2].addEventListener("click", event => {
+                newSearchForm.children[0].children[1].click()
+            })
+
             newSearchForm.addEventListener("submit", event => {
+                console.log("click")
                 event.preventDefault()
             })
+
+            //Create the search box
+            // const newSearchBox = document.createElement("div")
+            // newList.appendChild(newSearchBox)
+            // console.log(newSearchBox)
+            // newSearchBox.className = "searchBox"
+            // newSearchBox.innerHTML = `
+            //     <input type="text" placeholder="Pesquisar..." class="searchTerm"></input>
+            //     <div class="searchSend"><i class="zmdi zmdi-search"></i></div>
+            // `
+            //TODO add logic
 
         } else { //CPM and Message charts
 
