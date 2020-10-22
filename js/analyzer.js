@@ -69,9 +69,10 @@ function analyzeChat(chat) {
                             outlabels: {
                                 backgroundColor: null,
                                 text: "%p",
-                                color: "#505050",
-                                stretch: 5,
-                                lineWidth: 0,
+                                color: "white",
+                                backgroundColor: "#1ebea5",
+                                borderRadius: 100,
+                                stretch: 0,
                                 font: {
                                     minSize: 12
                                 }

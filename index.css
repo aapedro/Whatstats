@@ -145,7 +145,7 @@ body {
 }
 
 .listContainer {
-    height: 90%;
+    height: 70%;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -159,7 +159,7 @@ body {
     overflow: scroll;
     overflow-x: hidden;
     padding-left: 30px;
-    line-height: 31px;
+    line-height: 29px;
 }
 
 .listTitle {
@@ -193,7 +193,7 @@ ol li::before {
 
 .canvasContainer {
     width: 60%;
-    height: 90%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -208,7 +208,7 @@ ol li::before {
     width: 90%;
     height: 70px;
     border-radius: 100px;
-    margin-left: -10px;
+    margin-left: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;

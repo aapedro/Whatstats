@@ -109,9 +109,10 @@ function renderSlides(slides) {
                             outlabels: {
                                 backgroundColor: null,
                                 text: "%p",
-                                color: "#505050",
-                                stretch: 5,
-                                lineWidth: 0,
+                                color: "white",
+                                backgroundColor: "#1ebea5",
+                                borderRadius: 100,
+                                stretch: 0,
                                 font: {
                                     minSize: 12
                                 }
@@ -124,12 +125,12 @@ function renderSlides(slides) {
                 // Group everyone not in the top 8 as "outros"
                 ndata = chartConfig.data.datasets[0].data.slice()
                 const totalSum = ndata.reduce((acc, curr) => acc + curr, 0)
-                const top8Sum = ndata.slice(0,8).reduce((acc, curr) => acc + curr, 0) 
+                const top8Sum = ndata.slice(0, 8).reduce((acc, curr) => acc + curr, 0)
                 const other = ["Outros", totalSum - top8Sum]
 
                 if (other[1] > 0) {
-                    chartConfig.data.datasets[0].data = chartConfig.data.datasets[0].data.slice(0,8)
-                    chartConfig.data.labels = chartConfig.data.labels.slice(0,8)
+                    chartConfig.data.datasets[0].data = chartConfig.data.datasets[0].data.slice(0, 8)
+                    chartConfig.data.labels = chartConfig.data.labels.slice(0, 8)
                     chartConfig.data.datasets[0].data.push(other[1])
                     chartConfig.data.labels.push(other[0])
                 }
@@ -184,8 +185,8 @@ function renderSlides(slides) {
                 const top8Sum = ndata.slice(0, 8).reduce((acc, curr) => acc + curr, 0)
                 const other = ["Outros", totalSum - top8Sum]
                 if (other[1] > 0) {
-                    chartConfig.data.datasets[0].data = chartConfig.data.datasets[0].data.slice(0,8)
-                    chartConfig.data.labels = chartConfig.data.labels.slice(0,8)
+                    chartConfig.data.datasets[0].data = chartConfig.data.datasets[0].data.slice(0, 8)
+                    chartConfig.data.labels = chartConfig.data.labels.slice(0, 8)
                     chartConfig.data.datasets[0].data.push(other[1])
                     chartConfig.data.labels.push(other[0])
                 }
