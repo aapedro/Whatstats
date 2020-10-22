@@ -171,7 +171,20 @@ body {
 .listElement, .searchListElement{
     margin: 10px;
     font-size: 26px;
-    margin-left: 22px;
+}
+
+ol {
+    list-style: none;
+    counter-reset: my-counter;
+}
+
+ol li {
+    counter-increment: my-counter;
+}
+
+ol li::before {
+    content: counter(my-counter) " - ";
+    font-weight: bold;
 }
 
 .wordSearch {
@@ -179,9 +192,10 @@ body {
 }
 
 .canvasContainer {
-    height: 30%;
+    position: relative;
+    height: 50%;
+    width: 700px;
     margin-bottom: 100px;
-    width: 600px;
 }
 
 .searchSubmit {

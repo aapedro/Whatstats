@@ -1,8 +1,9 @@
 //Handle file parsing and analysis
-document.getElementsByClassName("uploaderForm")[0].addEventListener("submit", (event) => {
+document.getElementsByClassName("uploaderForm")[0].addEventListener("submit", async (event) => {
 
     event.preventDefault()
     file = event.target[0].files[0]
+    fileName = document.getElementsByClassName("filename")[0]
 
     //In case there are existing charts, clear them
     document.getElementsByClassName("slidesContainer")[0].innerHTML = ""
@@ -42,8 +43,9 @@ document.getElementsByClassName("uploaderForm")[0].addEventListener("submit", (e
 
     }
 
-    readChat()
+    fileName.innerHTML = "Análise em andamento..."
 
+    readChat()
     event.target.reset()
 })
 

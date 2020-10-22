@@ -71,10 +71,10 @@ function analyzeChat(chat) {
                                 backgroundColor: null,
                                 text: "%p",
                                 color: "#505050",
-                                stretch: 10,
-                                padding: 5,
+                                stretch: 5,
+                                lineWidth: 0,
                                 font: {
-                                    minSize: 20
+                                    minSize: 12
                                 }
                             }
                         },
@@ -118,6 +118,13 @@ function analyzeChat(chat) {
                         },
                         tooltips: {
                             enabled: false
+                        },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true // not the default, lol
+                                }
+                            }]
                         }
                     }
                 }
@@ -194,7 +201,17 @@ function analyzeChat(chat) {
                     .split(": ")
                     .shift()
                     .split(" ")
-                    .map((name, index) => index > 0 ? name[0] + "." : name)
+                    .map((name, index, array) => {
+                        if (array[0].startsWith("+")) {
+                            if (index == 0) {
+                                return ""
+                            } else {
+                                return name
+                            }
+                        } else {
+                            return index > 0 ? name[0] + "." : name
+                        }
+                    })
                     .join(" ")
 
                 if (!authors.includes(messageAuthor)) authors.push(messageAuthor)
