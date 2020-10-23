@@ -5,9 +5,6 @@ document.getElementsByClassName("uploaderForm")[0].addEventListener("submit", as
     file = event.target[0].files[0]
     fileName = document.getElementsByClassName("filename")[0]
 
-    //In case there are existing charts, clear them
-    document.getElementsByClassName("slidesContainer")[0].innerHTML = ""
-
     //If there's no file, cancel
     if (!file) return
 
@@ -44,6 +41,10 @@ document.getElementsByClassName("uploaderForm")[0].addEventListener("submit", as
     }
 
     fileName.innerHTML = "Análise em andamento..."
+    spinner = document.createElement("div")
+    spinner.className = "loadContainer"
+    spinner.innerHTML = `<i class="zmdi zmdi-spinner zmdi-hc-spin load"></i>`
+    document.getElementsByClassName("send")[0].appendChild(spinner)
 
     readChat()
     event.target.reset()

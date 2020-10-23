@@ -14,7 +14,7 @@ let oldChartReference;
 function renderSlides(slides) {
 
     //In case there are existing charts, clear them
-    document.querySelectorAll(".slide").forEach(element => element.remove())
+    document.querySelectorAll(".slide").forEach(e => e.remove())
 
     //slide.title slide.config
     slides.forEach(slide => {
@@ -121,7 +121,7 @@ function renderSlides(slides) {
                                 }
                             }
                         },
-                        aspectRatio: 1.7
+                        aspectRatio: 1.75
                     }
                 }
 
@@ -202,6 +202,9 @@ function renderSlides(slides) {
 
     });
 
-    document.getElementsByClassName("placeholderSlide")[0].remove()
+    if(document.getElementsByClassName("placeholderSlide")[0]) {
+        document.getElementsByClassName("placeholderSlide")[0].remove()
+    }
+    document.getElementsByClassName("loadContainer")[0].remove()
     document.getElementsByClassName('filename')[0].innerHTML = "Análise concluída"
 }

@@ -110,6 +110,18 @@ body {
     justify-content: center;
 }
 
+.loadContainer {
+    z-index: 10;
+    position: absolute;
+    border-radius: 100px;
+    background-color: #008a7c;
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .send:hover {
     background: #1f998c;
     box-shadow: 0 0 4px #1d8e81;
@@ -182,6 +194,9 @@ body {
 }
 
 .listTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 30px;
     margin-bottom: 20px;
     font-weight: bold;
