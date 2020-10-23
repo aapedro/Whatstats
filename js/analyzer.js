@@ -78,7 +78,7 @@ function analyzeChat(chat) {
                                 }
                             }
                         },
-                        aspectRatio: 1.7
+                        aspectRatio: 1.75
                     }
                 }
             }

@@ -13,6 +13,9 @@ let oldChartReference;
 
 function renderSlides(slides) {
 
+    //In case there are existing charts, clear them
+    document.querySelectorAll(".slide").forEach(element => element.remove())
+
     //slide.title slide.config
     slides.forEach(slide => {
 
@@ -199,5 +202,6 @@ function renderSlides(slides) {
 
     });
 
+    document.getElementsByClassName("placeholderSlide")[0].remove()
     document.getElementsByClassName('filename')[0].innerHTML = "Análise concluída"
 }
