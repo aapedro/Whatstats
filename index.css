@@ -6,6 +6,7 @@
 
 body {
     background-color: #e7f0e4;
+    transition: all 0.5 linear;
 }
 
 .header {
@@ -15,6 +16,10 @@ body {
     display: block;
     background-color: #1ebea5;
     color: #ffffff;
+}
+
+.header i {
+    font-size: 40px;
 }
 
 .innerHeader {
@@ -34,7 +39,7 @@ body {
 }
 
 .logo img {
-    height: 70px;
+    height: 60px;
     margin-right: 8px;
 }
 
@@ -144,9 +149,10 @@ body {
 }
 
 .slide {
+    color: #a8a8a8;
     background-color: white;
     position: relative;
-    width: 90%;
+    width: 1250px;
     height: 450px;
     margin-left: auto;
     margin-right: auto;
@@ -159,21 +165,6 @@ body {
     border-bottom: none;
     margin-bottom: 10px;
 }
-
-.placeholderSlide {
-    position: relative;
-    width: 90%;
-    height: 450px;
-    background-color: white;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 30px;
-    box-shadow: 0px 0px 5px #18948134;
-} 
 
 .listContainer {
     height: 80%;
@@ -278,6 +269,62 @@ ol li::before {
 .searchSend:hover {
     background: #1f998c;
     box-shadow: 0 0 4px #1d8e81;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+.placeholderSlide {
+    position: relative;
+    width: 1250px;
+    height: 450px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow: 0px 0px 5px #18948134;
+    font-family: "Roboto", sans-serif;
+    color: #525252;
+}
+
+.instructions {
+    width: 55%;
+    font-size: 29px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.more {
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    color: #818B90;
+    width: 30px;
+}
+
+.prog {
+    width: 30%;
+}
+
+a:link, a:visited {
+    color: #008a7c
+}
+
+a:hover {
+    color: #1f998c;
 }
 /* .slidecontainer 
         .slide

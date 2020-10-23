@@ -60,5 +60,5 @@ document.getElementsByClassName("send")[0].addEventListener("click", event => {
 })
 
 document.getElementsByClassName("uploaderInput")[0].addEventListener("change", event => {
-    document.getElementsByClassName("filename")[0].innerHTML = event.target.files[0].name
+    document.getElementsByClassName("filename")[0].innerHTML = event.target.files[0].name || "Nenhum arquivo selecionado (.zip, .txt)"
 })

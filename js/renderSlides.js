@@ -92,7 +92,7 @@ function renderSlides(slides) {
                 const chartValues = sortedDataArray.map(v => v[1])
 
                 const chartConfig = {
-                    type: "pie",
+                    type: "outlabeledPie",
                     data: {
                         datasets: [{
                             data: chartValues,
@@ -103,7 +103,12 @@ function renderSlides(slides) {
                     },
                     options: {
                         legend: {
-                            position: "bottom",
+                            position: "right",
+                            align: "left",
+                            labels: {
+                                boxWidth: 10,
+                                usePointStyle: true
+                            }
                         },
                         tooltips: {
                             enabled: false
@@ -118,7 +123,7 @@ function renderSlides(slides) {
                                 stretch: 0,
                                 font: {
                                     minSize: 12
-                                }
+                                },
                             }
                         },
                         aspectRatio: 1.75
@@ -180,7 +185,7 @@ function renderSlides(slides) {
                 chartConfig.data.labels = chartConfig.data.labels.slice(0, 7)
             }
 
-            if (chartConfig.type === "pie") {
+            if (chartConfig.type === "outlabeledPie") {
 
                 //Only show the top 8 and group the rest as Others
                 ndata = chartConfig.data.datasets[0].data.slice()

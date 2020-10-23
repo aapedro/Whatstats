@@ -49,7 +49,7 @@ function analyzeChat(chat) {
             const slideConfig = {
                 title: "Número de mensagens",
                 config: {
-                    type: "pie",
+                    type: "outlabeledPie",
                     data: {
                         datasets: [{
                             data: chartValues,
@@ -60,7 +60,12 @@ function analyzeChat(chat) {
                     },
                     options: {
                         legend: {
-                            position: "bottom"
+                            position: "right",
+                            align: "left",
+                            labels: {
+                                boxWidth: 10,
+                                usePointStyle: true
+                            }
                         },
                         tooltips: {
                             enabled: false
@@ -127,6 +132,7 @@ function analyzeChat(chat) {
                                 }
                             }]
                         },
+                        aspectRatio: 1.75
                     }
                 }
             }
