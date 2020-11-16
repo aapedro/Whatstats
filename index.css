@@ -18,6 +18,10 @@ body {
     color: #ffffff;
 }
 
+.header a:hover, .header a:visited {
+    color: #ffffff;
+}
+
 .header i {
     font-size: 40px;
 }
@@ -319,11 +323,11 @@ ol li::before {
     width: 30%;
 }
 
-a:link, a:visited {
+.placeholderSlide a:link, a:visited {
     color: #008a7c
 }
 
-a:hover {
+.placeholderSlide a:hover {
     color: #1f998c;
 }
 /* .slidecontainer 
