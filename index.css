@@ -298,8 +298,8 @@ ol li::before {
 }
 
 .instructions {
-    width: 55%;
-    font-size: 29px;
+    width: 80%;
+    font-size: 35px;
 }
 
 .title {
@@ -319,16 +319,21 @@ ol li::before {
     width: 30px;
 }
 
-.prog {
-    width: 30%;
-}
-
 .placeholderSlide a:link, a:visited {
     color: #008a7c
 }
 
 .placeholderSlide a:hover {
     color: #1f998c;
+}
+
+.searchPlaceholder p{
+    font-family: "Roboto", sans-serif;
+    margin: 30px;
+    margin-bottom: 110px;
+    width: 70%;
+    font-size: 40px;
+    color: #525252;
 }
 /* .slidecontainer 
         .slide

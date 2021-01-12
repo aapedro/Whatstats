@@ -49,6 +49,13 @@ function renderSlides(slides) {
             const newCanvas = document.createElement("canvas")
             newCanvasContainer.appendChild(newCanvas)
 
+            //Create placeholder text
+            const placeholderText = document.createElement("div")
+            placeholderText.className = "searchPlaceholder"
+            placeholderText.innerHTML = `<p>Os resultados da sua busca 
+            aparecerão aqui.</p>`
+            newCanvasContainer.appendChild(placeholderText)
+
             newSearchForm.innerHTML = `
             <div class="searchBox">
                 <input type="text" placeholder="Pesquisar..." class="searchTerm"></input>
@@ -74,6 +81,8 @@ function renderSlides(slides) {
                     document.querySelectorAll('.searchListElement').forEach(e => e.remove());
                 }
 
+                placeholderText.innerHTML = ""
+                
                 const searchTerm = event.target[0].value
                 const messagesPerAuthor = {}
 
@@ -90,6 +99,11 @@ function renderSlides(slides) {
                 const sortedDataArray = Object.entries(messagesPerAuthor).sort((a, b) => b[1] - a[1])
                 const chartLabels = sortedDataArray.map(v => v[0])
                 const chartValues = sortedDataArray.map(v => v[1])
+
+                if (!chartValues.some(n => n > 0)) {
+                    placeholderText.innerHTML = `<p>Nenhum resultado foi encontrado para esta busca.</p>`
+                    return
+                }
 
                 const chartConfig = {
                     type: "outlabeledPie",
